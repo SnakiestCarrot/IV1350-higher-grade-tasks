@@ -2,13 +2,24 @@ package se.kth.iv1350.amazingpos.view;
 
 import se.kth.iv1350.amazingpos.model.TotalRevenueObserver;
 
-class TotalRevenueView implements TotalRevenueObserver{
-    private double totalRevenue;
+public abstract class TotalRevenueView implements TotalRevenueObserver{
+    double totalRevenue;
 
     @Override
     public void printRevenue (double totalCost) {
         totalRevenue = totalCost;
-        System.out.printf("\nUpdated total revenue: %.2f\n" ,totalRevenue);
+        showTotalIncome();
     }  
 
+    private void showTotalIncome() {
+        try {
+            doShowTotalIncome();
+        } catch (Exception e) {
+            handleErrors(e);
+        }
+    }
+
+    protected abstract void doShowTotalIncome() throws Exception;
+
+    protected abstract void handleErrors(Exception e);
 }
