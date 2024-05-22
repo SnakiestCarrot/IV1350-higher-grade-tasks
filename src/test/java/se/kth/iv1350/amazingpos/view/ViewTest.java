@@ -8,6 +8,9 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -20,6 +23,8 @@ import se.kth.iv1350.amazingpos.model.Sale;
 
 public class ViewTest {
     private View instanceToTest;
+    private ByteArrayOutputStream printOutBuffer;
+    private PrintStream originalSysOut;
     
     @BeforeEach
     public void setUp() {
@@ -31,13 +36,15 @@ public class ViewTest {
         
         this.instanceToTest = new View(contr);
         
-        
-        
+        originalSysOut = System.out;
+        printOutBuffer = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(printOutBuffer));        
     }
     
     @AfterEach
     public void tearDown() {
         this.instanceToTest = null;
+        System.setOut(originalSysOut);
     }
 
     @Test
@@ -76,4 +83,29 @@ public class ViewTest {
         
     }
 
+    @Test
+    public void testPrintAfterIdentifierEnteredPrint() {
+        instanceToTest.runFakeView();
+        
+        String output = printOutBuffer.toString();
+
+        assertTrue(output.contains("items with item id"), "The view did not print the number of items and their ID.");
+        assertTrue(output.contains("Item ID:"), "View did not print the item ID");
+        assertTrue(output.contains("Item name:"), "View did not print the item name.");
+        assertTrue(output.contains("Item cost:"), "View did not print item cost.");
+        assertTrue(output.contains("VAT:"), "View did not print VAT.");
+        assertTrue(output.contains("Item description:"), "View did not print item description.");
+        assertTrue(output.contains("Total cost (incl VAT):"), "View did not print total cost including VAT.");
+        assertTrue(output.contains("Total VAT:"), "View did not print total VAT.");
+    }
+
+    @Test
+    public void testEnterItemIdentifierErrorPrint() {
+        instanceToTest.runFakeView();
+
+        String output = printOutBuffer.toString();
+
+        assertTrue(output.contains("Operation failed."));
+        assertTrue(output.contains("Error: Identifier"));
+    }
 }

@@ -17,9 +17,15 @@ public class Main {
      * @param args main does not take any arguments from the command line.
      */
     public static void main(String[] args) {
+        System.out.print("Initializing receipt printer... ");
         ReceiptPrinter printer = new ReceiptPrinter();
+        System.out.println("Done.");
+        System.out.print("Initializing accounting manager... ");
         ExternalAccountingManager accountingManager = ExternalAccountingManager.getExternalAccountingManager();
+        System.out.println("Done.");
+        System.out.print("Initializing catalog handler... ");
         ArticleCatalogHandler catalogHandler = ArticleCatalogHandler.getArticleCatalogHandler();
+        System.out.println("Done.");
 
         
         Controller contr = new Controller(printer, accountingManager, catalogHandler);
