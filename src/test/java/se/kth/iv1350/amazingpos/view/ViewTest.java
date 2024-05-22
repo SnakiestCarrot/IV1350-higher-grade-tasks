@@ -47,7 +47,7 @@ public class ViewTest {
 
     @Test
     public void testRevenueFileOutput() {
-        instanceToTest.addRevenueObserver(new TotalRevenueView());
+        instanceToTest.addRevenueObserver(new TotalRevenueDisplay());
         instanceToTest.addRevenueObserver(new TotalRevenueFileOutput());
         instanceToTest.runFakeView();
 
