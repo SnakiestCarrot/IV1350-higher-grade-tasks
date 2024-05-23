@@ -4,7 +4,6 @@ import java.io.FileWriter;
 import java.io.PrintStream;
 
 import se.kth.iv1350.amazingpos.model.Filelogger;
-import se.kth.iv1350.amazingpos.model.TotalRevenueObserver;
 
 /**
  * Subclass to TotalRevenueView.
