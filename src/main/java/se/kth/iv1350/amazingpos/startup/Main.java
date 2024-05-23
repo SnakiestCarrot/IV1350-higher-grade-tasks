@@ -5,6 +5,9 @@ import se.kth.iv1350.amazingpos.integration.ArticleCatalogHandler;
 import se.kth.iv1350.amazingpos.integration.ExternalAccountingManager;
 import se.kth.iv1350.amazingpos.integration.ReceiptPrinter;
 import se.kth.iv1350.amazingpos.view.View;
+import se.kth.iv1350.amazingpos.task2.Integer;
+import se.kth.iv1350.amazingpos.task2.Square;
+import se.kth.iv1350.amazingpos.task2.SquareUsingComposition;
 
 
 /**
@@ -32,6 +35,13 @@ public class Main {
         View view = new View(contr);
         
         view.runFakeView();
+
+        Integer integer = new Integer(2);
+        Square square = new Square(2);
+        SquareUsingComposition squareComp = new SquareUsingComposition(2);
+
+        System.out.println("\n Task 2:");
+        
         
     }
 }
