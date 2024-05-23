@@ -1,5 +1,7 @@
 package se.kth.iv1350.amazingpos.view;
 
+import se.kth.iv1350.amazingpos.model.Filelogger;
+
 /**
  * Subclass to the class TotalRevenueView that prints total revenue to the display.
  */
@@ -11,7 +13,7 @@ class TotalRevenueDisplay extends TotalRevenueView {
      * Prints revenue to display.
      */
     protected void doShowTotalIncome() throws Exception {
-        System.out.println("Total revenue: " + totalRevenue);
+        System.out.printf("\nTotal revenue: %.2f\n" , totalRevenue);
         
     }
 
@@ -22,5 +24,7 @@ class TotalRevenueDisplay extends TotalRevenueView {
      */
     protected void handleErrors(Exception e) {
         System.out.println("An error was made when printing the revenue");
+        Filelogger logger = new Filelogger("log.txt");
+        logger.logException(e);
     }
 }
