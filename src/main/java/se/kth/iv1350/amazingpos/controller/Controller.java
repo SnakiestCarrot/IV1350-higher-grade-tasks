@@ -77,14 +77,13 @@ public class Controller {
         
         catch (ArticleDTONotFoundException exception) {
             Filelogger logger = new Filelogger("log.txt");
-            logger.log("ArticleDTONotFoundException: Article DTO based on identifier: " + 
-                        exception.getInvalidIdentifier() + " not found in Article Catalog.");
+            logger.logException(exception);
             throw new InvalidArticleIdentifierException(exception.getInvalidIdentifier());
         }   
 
         catch (DatabaseFailureException exception) {
             Filelogger logger = new Filelogger("log.txt");
-            logger.log(exception.getMessage());
+            logger.logException(exception);
             throw new OperationFailedException("Could not get article.", exception);
         }
         

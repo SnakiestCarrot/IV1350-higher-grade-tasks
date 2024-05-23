@@ -26,10 +26,19 @@ public class Filelogger {
     }
 
     /**
-     * Prints message to log file.
-     * @param message The message thats printed.
+     * Prints Exception to log file.
+     * @param Exception The error thats printed.
      */
-    public void log (String message) {
-        logStream.println(message);
+    public void logException (Exception e) {
+        logStream.println("An exception was thrown with the following message: \n" + e.getMessage());
+        System.out.println("\n\n");
+        e.printStackTrace(logStream);
+    }
+       /**
+     * Prints message to log file.
+     * @param String The message thats printed.
+     */
+    public void logMessage (String msg) {
+        logStream.println(msg);
     }
 }

@@ -1,1 +1,9 @@
-ArticleDTONotFoundException: Article DTO based on identifier: 1 not found in Article Catalog.
+An exception was thrown with the following message: 
+An articleDTO was not found in the catalog. Identifier that was used: 1
+se.kth.iv1350.amazingpos.integration.ArticleDTONotFoundException: An articleDTO was not found in the catalog. Identifier that was used: 1
+	at se.kth.iv1350.amazingpos.integration.ArticleCatalogHandler.fetchArticleDTO(ArticleCatalogHandler.java:70)
+	at se.kth.iv1350.amazingpos.controller.Controller.fetchArticleDTO(Controller.java:60)
+	at se.kth.iv1350.amazingpos.controller.Controller.enterArticle(Controller.java:75)
+	at se.kth.iv1350.amazingpos.view.View.enterArticleIdentifier(View.java:97)
+	at se.kth.iv1350.amazingpos.view.View.runFakeView(View.java:41)
+	at se.kth.iv1350.amazingpos.startup.Main.main(Main.java:34)

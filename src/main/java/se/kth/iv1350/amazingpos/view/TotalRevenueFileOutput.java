@@ -1,5 +1,8 @@
 package se.kth.iv1350.amazingpos.view;
 
+import java.io.FileWriter;
+import java.io.PrintStream;
+
 import se.kth.iv1350.amazingpos.model.Filelogger;
 import se.kth.iv1350.amazingpos.model.TotalRevenueObserver;
 
@@ -16,7 +19,7 @@ class TotalRevenueFileOutput extends TotalRevenueView {
      */
     protected void doShowTotalIncome() throws Exception {
         Filelogger logger = new Filelogger("revenue.txt");
-        logger.log("Total revenue: " + totalRevenue);      
+        logger.logMessage("Total revenue: " + totalRevenue);      
     }
 
     @Override
@@ -25,8 +28,8 @@ class TotalRevenueFileOutput extends TotalRevenueView {
      * Logs any errors to log file.
      */
     protected void handleErrors(Exception e) {
-        Filelogger logger = new Filelogger("errorlog.txt");
-        logger.log("An error happened when trying to log the revenue");
+        Filelogger logger = new Filelogger("exceptions.txt");
+        logger.logException(e);
     }
     
 }
