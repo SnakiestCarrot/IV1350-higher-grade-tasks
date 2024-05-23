@@ -6,4 +6,4 @@ se.kth.iv1350.amazingpos.integration.ArticleDTONotFoundException: An articleDTO 
 	at se.kth.iv1350.amazingpos.controller.Controller.enterArticle(Controller.java:75)
 	at se.kth.iv1350.amazingpos.view.View.enterArticleIdentifier(View.java:97)
 	at se.kth.iv1350.amazingpos.view.View.runFakeView(View.java:41)
-	at se.kth.iv1350.amazingpos.startup.Main.main(Main.java:34)
+	at se.kth.iv1350.amazingpos.startup.Main.main(Main.java:37)

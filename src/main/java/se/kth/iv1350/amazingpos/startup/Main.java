@@ -40,8 +40,9 @@ public class Main {
         Square square = new Square(2);
         SquareUsingComposition squareComp = new SquareUsingComposition(2);
 
-        System.out.println("\n Task 2:");
-        
-        
+        System.out.println("\nTask 2:");
+        System.out.println("Integer value: " + integer.intValue());
+        System.out.println("Square (Inheritance) - Value: " + square.intValue() + ", Square: " + square.getSquare());
+        System.out.println("Square (Composition) - Value: " + squareComp.intValue() + ", Square: " + squareComp.getSquare());
     }
 }
