@@ -1,7 +1,7 @@
 package se.kth.iv1350.amazingpos.task2;
 
 /**
- * Thes square class extends integer and has a method for getting a square of integer.
+ * The square class extends integer and stores the square of integer.
  */
 public class Square extends Integer{
     private int square;
