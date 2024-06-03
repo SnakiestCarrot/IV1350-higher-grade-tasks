@@ -14,6 +14,4 @@ public class Square extends Integer{
     public int getSquare () {
         return square;
     }
-
-
 }
