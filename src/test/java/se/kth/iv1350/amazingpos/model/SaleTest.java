@@ -77,11 +77,11 @@ public class SaleTest {
         instanceToTest.enterArticleToSale(testArticleDTOBanana, 2);
 
 
-        assertTrue(instanceToTest.getTotalCost() == testArticleDTOBanana.getPrice() * 2);
+        assertTrue(instanceToTest.getTotalCost() == testArticleDTOBanana.getPrice() * 2, "The total cost of the sale does not match the expected value.");
 
         instanceToTest.enterArticleToSale(testArticleDTOOrange, 1);
 
-        assertTrue(instanceToTest.getTotalCost() == testArticleDTOBanana.getPrice() * 2 + testArticleDTOOrange.getPrice());
+        assertTrue(instanceToTest.getTotalCost() == testArticleDTOBanana.getPrice() * 2 + testArticleDTOOrange.getPrice(), "The total cost of the sale does not match the expected value.");
     }
 
     @Test
@@ -91,10 +91,10 @@ public class SaleTest {
 
         instanceToTest.enterArticleToSale(testArticleDTOBanana, 2);
 
-        assertTrue(instanceToTest.getTotalSaleVAT() == (testArticleDTOBanana.getVatRate() * testArticleDTOBanana.getPrice()) * 2);
+        assertTrue(instanceToTest.getTotalSaleVAT() == (testArticleDTOBanana.getVatRate() * testArticleDTOBanana.getPrice()) * 2, "The total VAT for the sale does not match the expected value.");
 
         instanceToTest.enterArticleToSale(testArticleDTOOrange, 1);
 
-        assertTrue(instanceToTest.getTotalSaleVAT() == (testArticleDTOBanana.getVatRate() * testArticleDTOBanana.getPrice()) * 2 + (testArticleDTOOrange.getVatRate() * testArticleDTOOrange.getPrice()));
+        assertTrue(instanceToTest.getTotalSaleVAT() == (testArticleDTOBanana.getVatRate() * testArticleDTOBanana.getPrice()) * 2 + (testArticleDTOOrange.getVatRate() * testArticleDTOOrange.getPrice()), "The total VAT for the sale does not match the expected value.");
     }
 }

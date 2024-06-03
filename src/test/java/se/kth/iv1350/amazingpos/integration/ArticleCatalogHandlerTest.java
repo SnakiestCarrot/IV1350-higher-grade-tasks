@@ -41,7 +41,7 @@ public class ArticleCatalogHandlerTest {
         try {
             actualOutput = instanceToTest.fetchArticleDTO(101);
         } catch (Exception e) {
-            fail();
+            fail("An exception was thrown when it was not expected.");
         }
 
         assertTrue(actualOutput.equals(expectedOutput), "The two ArticleDTO objects do not match.");

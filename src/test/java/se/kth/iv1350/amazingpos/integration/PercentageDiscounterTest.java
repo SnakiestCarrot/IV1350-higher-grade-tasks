@@ -21,6 +21,6 @@ public class PercentageDiscounterTest {
 
     @Test
     public void testApplyPercentageDiscount() {
-        assertTrue(90 == instanceToTest.discountSale(100));
+        assertTrue(90 == instanceToTest.discountSale(100), "The discount was not applied as expected.");
     }
 }
