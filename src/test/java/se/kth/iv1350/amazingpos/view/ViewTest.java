@@ -105,7 +105,7 @@ public class ViewTest {
 
         String output = printOutBuffer.toString();
 
-        assertTrue(output.contains("Operation failed."));
-        assertTrue(output.contains("Error: Identifier"));
+        assertTrue(output.contains("Operation failed."), "Operation failed did not print.");
+        assertTrue(output.contains("Error: Identifier"), "Identifer Error not printing.");
     }
 }

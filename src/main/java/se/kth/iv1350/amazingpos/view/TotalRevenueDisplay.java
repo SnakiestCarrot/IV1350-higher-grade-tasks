@@ -24,7 +24,7 @@ class TotalRevenueDisplay extends TotalRevenueView {
      */
     protected void handleErrors(Exception e) {
         System.out.println("An error was made when printing the revenue");
-        Filelogger logger = new Filelogger("log.txt");
+        Filelogger logger = new Filelogger("exceptions.txt");
         logger.logException(e);
     }
 }
